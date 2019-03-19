@@ -20,8 +20,10 @@
 </head>
 <body>
   <div class="container-fluid jumbotron">
-    <div class="container">
+
+    <div class="calculator bg-dark text-light shadow-lg">
       <h1>Tip Calculator</h1>
+      <div>
       <form>
         <div class="form-group">
           <label for="total">Total: $</label>
@@ -45,10 +47,12 @@
         <div>
           <button type="button" class="btn btn-lg btn-success" id="calculate" onclick="calculateTip()">Calculate</button>
         </div>
+        <div class="form-group">
+          <label for=""
+        </div>
       </form>
-      <div class="container" id="returnData">
-
-      </div>
+      <p id="returnData"></p>
+      <script>document.getElementById("returnData").innerHTML = calculateTip();</script>
       </div>
     </div>
   </div>

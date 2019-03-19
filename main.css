@@ -1,0 +1,8 @@
+.calculator {
+    display: block;
+    border-radius: 6%;
+    padding: 2.5em;
+    margin-left: auto;
+    margin-right: auto;
+    width: 60vw;
+}
