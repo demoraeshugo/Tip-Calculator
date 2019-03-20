@@ -1,3 +1,7 @@
 # Tip-Calculator
 Javascript Tip Calculator
-In Progress
+in progress...
+
+HMTL/CSS/Javascript fully functional
+
+Required: Input Validation

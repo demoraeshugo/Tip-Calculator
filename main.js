@@ -33,7 +33,7 @@
        
         //Return data
         document.getElementById("totalTip").innerHTML = totalTip;
-        document.getElementById("individualTip").innerHTML = individualTip;
         document.getElementById("totalWTip").innerHTML = totalWTip;
+        document.getElementById("individualTip").innerHTML = individualTip;
         document.getElementById("individualTotalWTip").innerHTML = individualTotalWTip;
     }
