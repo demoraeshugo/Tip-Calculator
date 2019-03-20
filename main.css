@@ -6,3 +6,8 @@
     margin-right: auto;
     width: 60vw;
 }
+
+#home {
+    background-image: url(/Images/restaurant.jpg);
+    background-size: 100vw;
+}

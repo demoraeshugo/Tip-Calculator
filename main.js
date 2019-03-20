@@ -1,36 +1,43 @@
-//document.getElementById("returnData").innerHTML = calculateTip();
-
-
-
-
-
-
-function calculateTip() 
-{
-    var total = parseFloat((document.getElementById('total').value));
-    var percentage = parseFloat((document.getElementById('percentage').value));
-    var numOfPeople = parseFloat((document.getElementById('numOfPeople').value));
-
-    var totalTip = total * (percentage/100);
+    //Hide tipping data on load
+    document.getElementById("returnData").style.display = "none";
     
-    var individualTip = (totalTip) / (numOfPeople);
-    
-    var totalWTip = (total) + (totalTip);
-    
-    var individualTotal = (totalWTip) / numOfPeople;
-    
-    return "The Total Tip is: $" + totalTip +
-            "\nThe Individual Tip is: $" + individualTip +
-            "\nThe Total with Tip is: $" + totalWTip +
-            "\nThe Individual Total is: $" + individualTotal;
+    //Custom function
+    function calculateTip() 
+    {
+        //Get data from forms
+        var total = parseFloat((document.getElementById('total').value));
+        var percentage = parseFloat((document.getElementById('percentage').value));
+        var numOfPeople = parseFloat((document.getElementById('numOfPeople').value));
 
-    //return totalTip;
-    //alert("Testing" + "\n total = " + total + "\n percentage = " + percentage + "\n number of people = " + numOfPeople);
-    //alert("Total Tip = $" + (totalTip).toFixed(2) + "\nIndividual Tip = $" + (individualTip).toFixed(2) + "\nTotal with Tip = $" + (totalWTip).toFixed(2) + "\nIndividual Totals with Tip = $" + (individualTotal).toFixed(2))
-};
+        //Do math 
+        var totalTip = total * (percentage/100);
+        var individualTip = (totalTip) / (numOfPeople);
+        var totalWTip = (total) + (totalTip);
+        var individualTotalWTip = (totalWTip) / numOfPeople;
 
-function display()
-{
-    
-}
+        //Rounding
+        
+        totalTip = Math.round(totalTip * 100) / 100;
+        totalTip = total.toFixed(2);
 
+        individualTip = Math.round(individualTip * 100) / 100;
+        individualTip = individualTip.toFixed(2);
+
+        totalWTip = Math.round(totalWTip * 100) / 100;
+        totalWTip = totalWTip.toFixed(2);
+
+        individualTotalWTip = Math.round(individualTotalWTip * 100) / 100;
+        individualTotalWTip = individualTotalWTip.toFixed(2);
+        
+        //Return data
+        var display = document.getElementById("returnData");
+        if (display.style.display === "none")
+        display.style.display = "block";
+        else 
+        display.style.display = "none";
+
+        document.getElementById("totalTip").innerHTML = totalTip;
+        document.getElementById("individualTip").innerHTML = individualTip;
+        document.getElementById("totalWTip").innerHTML = totalWTip;
+        document.getElementById("individualTotalWTip").innerHTML = individualTotalWTip;
+    }
