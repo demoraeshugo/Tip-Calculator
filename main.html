@@ -45,14 +45,81 @@
             <input type="number" step="1" min="1" class="form-control" id="numOfPeople" aria-describedby="numOfPeopleHelp" placeholder="1">
         </div>
         <div>
-          <button type="button" class="btn btn-lg btn-success" id="calculate" onclick="calculateTip()">Calculate</button>
+          <button type="button" class="btn btn-lg btn-success" id="calculate" onclick="show()">Calculate</button>
         </div>
         <div class="form-group">
           <label for=""
         </div>
       </form>
-      <p id="returnData"></p>
-      <script>document.getElementById("returnData").innerHTML = calculateTip();</script>
+
+      <br>
+
+      <div id="returnData" style="display: none;">
+        <p id="totalTip">
+
+        </p>
+        <p id="individualTip">
+
+        </p>
+        <p id="totalWTip">
+
+        </p>
+        <p id="individualTotalWTip">
+
+        </p>
+
+      </div>
+
+      <script>
+
+      var total = parseFloat((document.getElementById('total').value));
+      var percentage = parseFloat((document.getElementById('percentage').value));
+      var numOfPeople = parseFloat((document.getElementById('numOfPeople').value));
+
+      var totalTip = findTotalTip();
+      var individualTip = findIndividualTip();
+      var totalWTip = findTotalWTip();
+      var individualTotal = findIndividualTip();
+
+      function findTotalTip()
+      {
+        var totalTip = total * (percentage/100);
+        return totalTip;
+      }
+
+      function findIndividualTip()
+      {
+        var individualTip = (totalTip) / (numOfPeople);
+        return individualTip;
+      }
+
+      function findTotalWTip()
+      {
+        var totalWTip = (total) + (totalTip);
+        return totalWTip;
+      }
+
+      function findIndividualTip()
+      {
+        var individualTotal = (totalWTip) / numOfPeople;
+        return individualTotal;
+      }
+  
+      function show() 
+      {
+        var x = document.getElementById("returnData");
+        if (x.style.display === "none") {
+          x.style.display = "block";
+          document.getElementById("totalTip").innerHTML = "" + "Total Tip = " + totalTip;
+          document.getElementById("individualTip").innerHTML = "Individual Tip = " + findIndividualTip();
+          document.getElementById("totalWTip").innerHTML = "Total with Tip = " + findTotalWTip();
+          document.getElementById("individualTotalWTip").innerHTML = "Total Tip = " + findIndividualTip();
+        } else {
+          x.style.display = "none";
+        }
+      }
+
+      </script>
       </div>
     </div>
   </div>

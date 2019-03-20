@@ -29,3 +29,8 @@ function calculateTip()
     //alert("Total Tip = $" + (totalTip).toFixed(2) + "\nIndividual Tip = $" + (individualTip).toFixed(2) + "\nTotal with Tip = $" + (totalWTip).toFixed(2) + "\nIndividual Totals with Tip = $" + (individualTotal).toFixed(2))
 };
 
+function display()
+{
+    
+}
+
