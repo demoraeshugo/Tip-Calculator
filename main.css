@@ -1,3 +1,7 @@
+* {
+    font-family: 'Quicksand', sans-serif;
+}
+
 .calculator {
     display: block;
     border-radius: 6%;
